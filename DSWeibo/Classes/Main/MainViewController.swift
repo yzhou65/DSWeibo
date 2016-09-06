@@ -23,10 +23,40 @@ class MainViewController: UITabBarController {
         //注意：在ios7以前如果设置了tintColor只有文字会变，而图片不会变
         tabBar.tintColor = UIColor.orangeColor()
         
-        addChildViewController("HomeTableViewController", title: "首页", imageName: "tabbar_home")
-        addChildViewController("MessageTableViewController", title: "消息", imageName: "tabbar_message_center")
-        addChildViewController("DiscoverTableViewController", title: "发现", imageName: "tabbar_discover")
-        addChildViewController("ProfileTableViewController", title: "我", imageName: "tabbar_profile")
+        //获取json文件的路径
+        let path = NSBundle.mainBundle().pathForResource("MainVCSettings.json", ofType: nil)
+        
+        //通过文件路径创建NSData
+        if let jsonPath = path {
+            let jsonData = NSData(contentsOfFile: jsonPath)
+            
+            do {
+                //有可能发生异常的代码放到这里
+                //序列化json数据－>Array
+                //try：发生异常会跳到catch中继续执行
+                //try!：发生异常程序直接就崩溃
+                let dictArr = try NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions.MutableContainers)
+                
+                //遍历数组，动态创建控制器和设置数据
+                //Swift中，如果需要遍历一个数组，必须先明确数据类型
+                for dict in dictArr as! [[String: String]]
+                {
+                    //报错的原因：addChildViewController方法的参数必须有值，但是字典的返回值是可选类型，所以全部要加上返回值
+                    addChildViewController(dict["vcName"]!, title: dict["title"]!, imageName: dict["imageName"]!)
+                }
+            } catch {
+                //发生异常之后会执行的
+                print(error)
+                
+                //从本地创建控制器
+                addChildViewController("HomeTableViewController", title: "首页", imageName: "tabbar_home")
+                addChildViewController("MessageTableViewController", title: "消息", imageName: "tabbar_message_center")
+                addChildViewController("DiscoverTableViewController", title: "发现", imageName: "tabbar_discover")
+                addChildViewController("ProfileTableViewController", title: "我", imageName: "tabbar_profile")
+            }
+            
+        }
+        
         
     }
     
