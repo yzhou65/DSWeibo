@@ -18,6 +18,11 @@
 		8AD724C31D7EAFFC00C3D428 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD724C21D7EAFFC00C3D428 /* ProfileTableViewController.swift */; };
 		8AD724C71D7EBD2300C3D428 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AD724C51D7EBD2300C3D428 /* MainVCSettings.json */; };
 		8AD724C81D7EBD2300C3D428 /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD724C61D7EBD2300C3D428 /* NullViewController.swift */; };
+		8AD724CA1D7EDD0200C3D428 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD724C91D7EDD0200C3D428 /* BaseTableViewController.swift */; };
+		8AD724CC1D7EE1F500C3D428 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD724CB1D7EE1F500C3D428 /* VisitorView.swift */; };
+		8AD724CE1D7EE84C00C3D428 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD724CD1D7EE84C00C3D428 /* UIView+AutoLayout.swift */; };
+		8AD724D01D7FEDFF00C3D428 /* UIBarButtonItem+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD724CF1D7FEDFF00C3D428 /* UIBarButtonItem+Category.swift */; };
+		8AD724D21D7FF2C900C3D428 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD724D11D7FF2C900C3D428 /* TitleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,11 @@
 		8AD724C21D7EAFFC00C3D428 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		8AD724C51D7EBD2300C3D428 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		8AD724C61D7EBD2300C3D428 /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
+		8AD724C91D7EDD0200C3D428 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		8AD724CB1D7EE1F500C3D428 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		8AD724CD1D7EE84C00C3D428 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
+		8AD724CF1D7FEDFF00C3D428 /* UIBarButtonItem+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Category.swift"; sourceTree = "<group>"; };
+		8AD724D11D7FF2C900C3D428 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +158,8 @@
 		8AD724B31D7EAEDF00C3D428 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8AD724CF1D7FEDFF00C3D428 /* UIBarButtonItem+Category.swift */,
+				8AD724D11D7FF2C900C3D428 /* TitleButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -173,6 +185,8 @@
 			children = (
 				8AD724C41D7EBD2300C3D428 /* Resource */,
 				8AD724BA1D7EAF6A00C3D428 /* MainViewController.swift */,
+				8AD724C91D7EDD0200C3D428 /* BaseTableViewController.swift */,
+				8AD724CB1D7EE1F500C3D428 /* VisitorView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -196,6 +210,7 @@
 		8AD724B91D7EAEDF00C3D428 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				8AD724CD1D7EE84C00C3D428 /* UIView+AutoLayout.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -344,10 +359,15 @@
 			files = (
 				8AD724C31D7EAFFC00C3D428 /* ProfileTableViewController.swift in Sources */,
 				8AD724BD1D7EAF8900C3D428 /* HomeTableViewController.swift in Sources */,
+				8AD724CA1D7EDD0200C3D428 /* BaseTableViewController.swift in Sources */,
 				8AD724BB1D7EAF6A00C3D428 /* MainViewController.swift in Sources */,
 				8AD724BF1D7EAFBE00C3D428 /* DiscoverTableViewController.swift in Sources */,
+				8AD724D01D7FEDFF00C3D428 /* UIBarButtonItem+Category.swift in Sources */,
+				8AD724CE1D7EE84C00C3D428 /* UIView+AutoLayout.swift in Sources */,
 				8AD724C11D7EAFE200C3D428 /* MessageTableViewController.swift in Sources */,
+				8AD724CC1D7EE1F500C3D428 /* VisitorView.swift in Sources */,
 				8AD724851D7EA51E00C3D428 /* AppDelegate.swift in Sources */,
+				8AD724D21D7FF2C900C3D428 /* TitleButton.swift in Sources */,
 				8AD724C81D7EBD2300C3D428 /* NullViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
