@@ -23,6 +23,13 @@
 		8AD724CE1D7EE84C00C3D428 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD724CD1D7EE84C00C3D428 /* UIView+AutoLayout.swift */; };
 		8AD724D01D7FEDFF00C3D428 /* UIBarButtonItem+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD724CF1D7FEDFF00C3D428 /* UIBarButtonItem+Category.swift */; };
 		8AD724D21D7FF2C900C3D428 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD724D11D7FF2C900C3D428 /* TitleButton.swift */; };
+		8AD724D71D8002E900C3D428 /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD724D41D8002E900C3D428 /* PopoverPresentationController.swift */; };
+		8AD724D81D8002E900C3D428 /* PopoverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AD724D51D8002E900C3D428 /* PopoverViewController.storyboard */; };
+		8AD724D91D8002E900C3D428 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD724D61D8002E900C3D428 /* PopoverViewController.swift */; };
+		8AD724DB1D80FF9F00C3D428 /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD724DA1D80FF9F00C3D428 /* PopoverAnimator.swift */; };
+		8AD724DE1D810D5C00C3D428 /* QRCodeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AD724DD1D810D5C00C3D428 /* QRCodeViewController.storyboard */; };
+		8AD724E01D810E7C00C3D428 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD724DF1D810E7C00C3D428 /* QRCodeViewController.swift */; };
+		8AD724E21D814D2800C3D428 /* QRCodeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD724E11D814D2800C3D428 /* QRCodeCardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +72,13 @@
 		8AD724CD1D7EE84C00C3D428 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		8AD724CF1D7FEDFF00C3D428 /* UIBarButtonItem+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Category.swift"; sourceTree = "<group>"; };
 		8AD724D11D7FF2C900C3D428 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
+		8AD724D41D8002E900C3D428 /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
+		8AD724D51D8002E900C3D428 /* PopoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopoverViewController.storyboard; sourceTree = "<group>"; };
+		8AD724D61D8002E900C3D428 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		8AD724DA1D80FF9F00C3D428 /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
+		8AD724DD1D810D5C00C3D428 /* QRCodeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCodeViewController.storyboard; sourceTree = "<group>"; };
+		8AD724DF1D810E7C00C3D428 /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		8AD724E11D814D2800C3D428 /* QRCodeCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeCardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +189,8 @@
 		8AD724B51D7EAEDF00C3D428 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8AD724DC1D810D4A00C3D428 /* QRCode */,
+				8AD724D31D8002E900C3D428 /* Popover */,
 				8AD724BC1D7EAF8900C3D428 /* HomeTableViewController.swift */,
 			);
 			path = Home;
@@ -222,6 +238,27 @@
 				8AD724C61D7EBD2300C3D428 /* NullViewController.swift */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		8AD724D31D8002E900C3D428 /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				8AD724D41D8002E900C3D428 /* PopoverPresentationController.swift */,
+				8AD724DA1D80FF9F00C3D428 /* PopoverAnimator.swift */,
+				8AD724D51D8002E900C3D428 /* PopoverViewController.storyboard */,
+				8AD724D61D8002E900C3D428 /* PopoverViewController.swift */,
+			);
+			path = Popover;
+			sourceTree = "<group>";
+		};
+		8AD724DC1D810D4A00C3D428 /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				8AD724DD1D810D5C00C3D428 /* QRCodeViewController.storyboard */,
+				8AD724DF1D810E7C00C3D428 /* QRCodeViewController.swift */,
+				8AD724E11D814D2800C3D428 /* QRCodeCardViewController.swift */,
+			);
+			path = QRCode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,8 +368,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AD724D81D8002E900C3D428 /* PopoverViewController.storyboard in Resources */,
 				8AD724C71D7EBD2300C3D428 /* MainVCSettings.json in Resources */,
 				8AD7248C1D7EA51E00C3D428 /* Assets.xcassets in Resources */,
+				8AD724DE1D810D5C00C3D428 /* QRCodeViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,14 +396,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AD724D71D8002E900C3D428 /* PopoverPresentationController.swift in Sources */,
 				8AD724C31D7EAFFC00C3D428 /* ProfileTableViewController.swift in Sources */,
+				8AD724E01D810E7C00C3D428 /* QRCodeViewController.swift in Sources */,
+				8AD724D91D8002E900C3D428 /* PopoverViewController.swift in Sources */,
 				8AD724BD1D7EAF8900C3D428 /* HomeTableViewController.swift in Sources */,
 				8AD724CA1D7EDD0200C3D428 /* BaseTableViewController.swift in Sources */,
+				8AD724E21D814D2800C3D428 /* QRCodeCardViewController.swift in Sources */,
 				8AD724BB1D7EAF6A00C3D428 /* MainViewController.swift in Sources */,
 				8AD724BF1D7EAFBE00C3D428 /* DiscoverTableViewController.swift in Sources */,
 				8AD724D01D7FEDFF00C3D428 /* UIBarButtonItem+Category.swift in Sources */,
 				8AD724CE1D7EE84C00C3D428 /* UIView+AutoLayout.swift in Sources */,
 				8AD724C11D7EAFE200C3D428 /* MessageTableViewController.swift in Sources */,
+				8AD724DB1D80FF9F00C3D428 /* PopoverAnimator.swift in Sources */,
 				8AD724CC1D7EE1F500C3D428 /* VisitorView.swift in Sources */,
 				8AD724851D7EA51E00C3D428 /* AppDelegate.swift in Sources */,
 				8AD724D21D7FF2C900C3D428 /* TitleButton.swift in Sources */,
@@ -441,7 +485,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -480,7 +524,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -493,7 +537,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = DSWeibo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gov.fda.DSWeibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -506,7 +550,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = DSWeibo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gov.fda.DSWeibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

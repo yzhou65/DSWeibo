@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ 首页界面导航条中间的带箭头按钮
+ */
 class TitleButton: UIButton {
     
     override init(frame: CGRect) {
