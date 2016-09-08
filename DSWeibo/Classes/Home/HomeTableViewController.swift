@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class HomeTableViewController: BaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        SVProgressHUD.showInfoWithStatus("我来了")
         
         //如果没有登录，就要设置未登录界面信息
         if !userLogin {
