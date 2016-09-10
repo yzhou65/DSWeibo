@@ -10,6 +10,10 @@
 		029984C5BC2305CA108118AC /* Pods_DSWeibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C49F7C6954B30ADBFB43755 /* Pods_DSWeibo.framework */; };
 		0DE18F4AD1C5719C1D287556 /* Pods_DSWeiboUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF1D3435F925EC1F04204D5 /* Pods_DSWeiboUITests.framework */; };
 		16EE0E4E74B4A1D40BA2658A /* Pods_DSWeiboTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E26FF440E4A036D4DBB6054A /* Pods_DSWeiboTests.framework */; };
+		8A06C24F1D834F1D009D9DC2 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06C24E1D834F1D009D9DC2 /* OAuthViewController.swift */; };
+		8A06C2511D835D6C009D9DC2 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06C2501D835D6C009D9DC2 /* NetworkTools.swift */; };
+		8A06C2531D83B299009D9DC2 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06C2521D83B299009D9DC2 /* UserAccount.swift */; };
+		8A06C2551D83C98D009D9DC2 /* String+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06C2541D83C98D009D9DC2 /* String+Category.swift */; };
 		8AD724851D7EA51E00C3D428 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD724841D7EA51E00C3D428 /* AppDelegate.swift */; };
 		8AD7248C1D7EA51E00C3D428 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AD7248B1D7EA51E00C3D428 /* Assets.xcassets */; };
 		8AD7249A1D7EA51E00C3D428 /* DSWeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD724991D7EA51E00C3D428 /* DSWeiboTests.swift */; };
@@ -69,6 +73,10 @@
 /* Begin PBXFileReference section */
 		1C49F7C6954B30ADBFB43755 /* Pods_DSWeibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DSWeibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36D0CB0FB155F94BA248AB98 /* Pods-DSWeiboUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSWeiboUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DSWeiboUITests/Pods-DSWeiboUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8A06C24E1D834F1D009D9DC2 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
+		8A06C2501D835D6C009D9DC2 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		8A06C2521D83B299009D9DC2 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		8A06C2541D83C98D009D9DC2 /* String+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Category.swift"; sourceTree = "<group>"; };
 		8AD724811D7EA51E00C3D428 /* DSWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD724841D7EA51E00C3D428 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AD7248B1D7EA51E00C3D428 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -191,6 +199,7 @@
 		8AD724B21D7EAEDF00C3D428 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8AD725D41D82AF9500C3D428 /* OAuth */,
 				8AD724B31D7EAEDF00C3D428 /* Common */,
 				8AD724B41D7EAEDF00C3D428 /* Discover */,
 				8AD724B51D7EAEDF00C3D428 /* Home */,
@@ -260,6 +269,8 @@
 			isa = PBXGroup;
 			children = (
 				8AD724CD1D7EE84C00C3D428 /* UIView+AutoLayout.swift */,
+				8A06C2501D835D6C009D9DC2 /* NetworkTools.swift */,
+				8A06C2541D83C98D009D9DC2 /* String+Category.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -292,6 +303,15 @@
 				8AD724E11D814D2800C3D428 /* QRCodeCardViewController.swift */,
 			);
 			path = QRCode;
+			sourceTree = "<group>";
+		};
+		8AD725D41D82AF9500C3D428 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				8A06C24E1D834F1D009D9DC2 /* OAuthViewController.swift */,
+				8A06C2521D83B299009D9DC2 /* UserAccount.swift */,
+			);
+			path = OAuth;
 			sourceTree = "<group>";
 		};
 		92F6EA8BDB62D79DC55F87AE /* Frameworks */ = {
@@ -588,17 +608,21 @@
 				8AD724C31D7EAFFC00C3D428 /* ProfileTableViewController.swift in Sources */,
 				8AD724E01D810E7C00C3D428 /* QRCodeViewController.swift in Sources */,
 				8AD724D91D8002E900C3D428 /* PopoverViewController.swift in Sources */,
+				8A06C2531D83B299009D9DC2 /* UserAccount.swift in Sources */,
 				8AD724BD1D7EAF8900C3D428 /* HomeTableViewController.swift in Sources */,
+				8A06C2511D835D6C009D9DC2 /* NetworkTools.swift in Sources */,
 				8AD724CA1D7EDD0200C3D428 /* BaseTableViewController.swift in Sources */,
 				8AD724E21D814D2800C3D428 /* QRCodeCardViewController.swift in Sources */,
 				8AD724BB1D7EAF6A00C3D428 /* MainViewController.swift in Sources */,
 				8AD724BF1D7EAFBE00C3D428 /* DiscoverTableViewController.swift in Sources */,
 				8AD724D01D7FEDFF00C3D428 /* UIBarButtonItem+Category.swift in Sources */,
+				8A06C24F1D834F1D009D9DC2 /* OAuthViewController.swift in Sources */,
 				8AD724CE1D7EE84C00C3D428 /* UIView+AutoLayout.swift in Sources */,
 				8AD724C11D7EAFE200C3D428 /* MessageTableViewController.swift in Sources */,
 				8AD724DB1D80FF9F00C3D428 /* PopoverAnimator.swift in Sources */,
 				8AD724CC1D7EE1F500C3D428 /* VisitorView.swift in Sources */,
 				8AD724851D7EA51E00C3D428 /* AppDelegate.swift in Sources */,
+				8A06C2551D83C98D009D9DC2 /* String+Category.swift in Sources */,
 				8AD724D21D7FF2C900C3D428 /* TitleButton.swift in Sources */,
 				8AD724C81D7EBD2300C3D428 /* NullViewController.swift in Sources */,
 			);

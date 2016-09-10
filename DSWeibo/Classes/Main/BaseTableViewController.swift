@@ -11,7 +11,7 @@ import UIKit
 class BaseTableViewController: UITableViewController, VisitorViewDelegate {
 
     //定义一个变量保存用户当前是否登录
-    var userLogin = true
+    var userLogin = UserAccount.isUserLogin()
     
     //定义属性保存未登录界面
     var visitorView: VisitorView?
@@ -40,10 +40,18 @@ class BaseTableViewController: UITableViewController, VisitorViewDelegate {
     
     //MARK: VisitorViewDelegate代理方法
     func loginBtnWillClick() {
-        print(#function)
+//        print(#function)
+        
+        //弹出登录界面
+        let oauthVC = OAuthViewController()
+        let nav = UINavigationController(rootViewController: oauthVC)
+        presentViewController(nav, animated: true, completion: nil)
     }
     
-    func registerBtnWillClick() {
-        print(#function)
+    func registerBtnWillClick(){
+//        print(NetworkTools.sharedNetworkTools())
+//        print(NSDate(timeIntervalSinceNow: 157679999.0))
+        
+        
     }
 }
