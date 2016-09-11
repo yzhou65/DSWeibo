@@ -106,7 +106,7 @@ extension OAuthViewController: UIWebViewDelegate {
         //定义路径
         let path = "oauth2/access_token"
         //封装参数
-        let params = ["client_id":WB_App_Key, "client_secret":WB_App_Secret, "grant_type":"authorization_code", "code":code]
+        let params = ["client_id":WB_App_Key, "client_secret":WB_App_Secret, "grant_type":"authorization_code", "code":code, "redirect_uri":WB_redirect_uri]
         //发post请求
         NetworkTools.sharedNetworkTools().POST(path, parameters: params, success: { (_, JSON) in
             
@@ -139,13 +139,16 @@ extension OAuthViewController: UIWebViewDelegate {
             
             //获取用户信息
             //用闭包的形式在获取了用户信息后，归档用户信息。这样就可以保证异步请求加载完成后，再调用闭包
-            account.loadUserInfo({ (account, error) in
+            account.loadUserInfo{ (account, error) in
                 if account != nil {
-                    account?.saveAccount()
+                    account!.saveAccount()
+                    //去欢迎界面
+                    NSNotificationCenter.defaultCenter().postNotificationName(YZSwitchRootViewControllerKey, object: false)
+                    return
                 }
                 
                 SVProgressHUD.showInfoWithStatus("Failed to load user info", maskType: SVProgressHUDMaskType.Black)
-            })
+            }
             
             //由于加载用户信息是异步的，所以如果在这里归档可能会因为用户信息还没在子线程中加载完而导致保存空值. 不能在这里归档
 //            account.saveAccount()

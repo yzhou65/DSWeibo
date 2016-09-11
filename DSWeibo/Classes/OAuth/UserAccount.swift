@@ -102,9 +102,11 @@ class UserAccount: NSObject, NSCoding {
      加载授权模型
      */
     class func loadAccount() -> UserAccount? {
-        if account == nil {
-            account = NSKeyedUnarchiver.unarchiveObjectWithFile(filePath) as? UserAccount
+        //判断是否已经加载过
+        if account != nil {
+            return account
         }
+        account = NSKeyedUnarchiver.unarchiveObjectWithFile(filePath) as? UserAccount
         
         //判断授权信息是否过期
         if account?.expires_date?.compare(NSDate()) == NSComparisonResult.OrderedAscending {
@@ -128,7 +130,7 @@ class UserAccount: NSObject, NSCoding {
     }
     
     /**
-     从文件中毒曲对象
+     从文件中读取对象
      */
     required init?(coder aDecoder: NSCoder) {
         access_token = aDecoder.decodeObjectForKey("access_token") as? String
