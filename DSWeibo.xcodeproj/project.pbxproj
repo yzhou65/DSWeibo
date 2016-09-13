@@ -16,6 +16,19 @@
 		8A06C2551D83C98D009D9DC2 /* String+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06C2541D83C98D009D9DC2 /* String+Category.swift */; };
 		8A06C2581D83ECF7009D9DC2 /* NewfeatureCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06C2571D83ECF7009D9DC2 /* NewfeatureCollectionViewController.swift */; };
 		8A06C25A1D8405C1009D9DC2 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06C2591D8405C1009D9DC2 /* WelcomeViewController.swift */; };
+		8A06C25E1D853161009D9DC2 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06C25D1D853161009D9DC2 /* Status.swift */; };
+		8A06C2601D854899009D9DC2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06C25F1D854899009D9DC2 /* User.swift */; };
+		8A06C2641D8550E4009D9DC2 /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06C2631D8550E4009D9DC2 /* StatusTableViewCell.swift */; };
+		8A06C2661D855735009D9DC2 /* UILabel+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06C2651D855735009D9DC2 /* UILabel+Category.swift */; };
+		8A06C2681D855744009D9DC2 /* UIButton+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06C2671D855744009D9DC2 /* UIButton+Category.swift */; };
+		8A33FD631D85FAB7005DFA49 /* NSDate+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A33FD621D85FAB7005DFA49 /* NSDate+Category.swift */; };
+		8A33FD671D866E05005DFA49 /* StatusTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A33FD661D866E05005DFA49 /* StatusTableFooterView.swift */; };
+		8A33FD691D866E8D005DFA49 /* StatusTableTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A33FD681D866E8D005DFA49 /* StatusTableTopView.swift */; };
+		8A33FD6B1D8671F0005DFA49 /* StatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A33FD6A1D8671F0005DFA49 /* StatusPictureView.swift */; };
+		8A33FD6D1D867FFB005DFA49 /* StatusForwardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A33FD6C1D867FFB005DFA49 /* StatusForwardTableViewCell.swift */; };
+		8A33FD6F1D869365005DFA49 /* StatusNormalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A33FD6E1D869365005DFA49 /* StatusNormalTableViewCell.swift */; };
+		8A33FD711D87BAE3005DFA49 /* HomeRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A33FD701D87BAE3005DFA49 /* HomeRefreshView.xib */; };
+		8A33FD731D87BD83005DFA49 /* HomeRefreshViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A33FD721D87BD82005DFA49 /* HomeRefreshViewControl.swift */; };
 		8AD724851D7EA51E00C3D428 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD724841D7EA51E00C3D428 /* AppDelegate.swift */; };
 		8AD7248C1D7EA51E00C3D428 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AD7248B1D7EA51E00C3D428 /* Assets.xcassets */; };
 		8AD7249A1D7EA51E00C3D428 /* DSWeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD724991D7EA51E00C3D428 /* DSWeiboTests.swift */; };
@@ -81,6 +94,19 @@
 		8A06C2541D83C98D009D9DC2 /* String+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Category.swift"; sourceTree = "<group>"; };
 		8A06C2571D83ECF7009D9DC2 /* NewfeatureCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewfeatureCollectionViewController.swift; sourceTree = "<group>"; };
 		8A06C2591D8405C1009D9DC2 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		8A06C25D1D853161009D9DC2 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		8A06C25F1D854899009D9DC2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8A06C2631D8550E4009D9DC2 /* StatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
+		8A06C2651D855735009D9DC2 /* UILabel+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Category.swift"; sourceTree = "<group>"; };
+		8A06C2671D855744009D9DC2 /* UIButton+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Category.swift"; sourceTree = "<group>"; };
+		8A33FD621D85FAB7005DFA49 /* NSDate+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Category.swift"; sourceTree = "<group>"; };
+		8A33FD661D866E05005DFA49 /* StatusTableFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableFooterView.swift; sourceTree = "<group>"; };
+		8A33FD681D866E8D005DFA49 /* StatusTableTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableTopView.swift; sourceTree = "<group>"; };
+		8A33FD6A1D8671F0005DFA49 /* StatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPictureView.swift; sourceTree = "<group>"; };
+		8A33FD6C1D867FFB005DFA49 /* StatusForwardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusForwardTableViewCell.swift; sourceTree = "<group>"; };
+		8A33FD6E1D869365005DFA49 /* StatusNormalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusNormalTableViewCell.swift; sourceTree = "<group>"; };
+		8A33FD701D87BAE3005DFA49 /* HomeRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeRefreshView.xib; sourceTree = "<group>"; };
+		8A33FD721D87BD82005DFA49 /* HomeRefreshViewControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRefreshViewControl.swift; sourceTree = "<group>"; };
 		8AD724811D7EA51E00C3D428 /* DSWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD724841D7EA51E00C3D428 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AD7248B1D7EA51E00C3D428 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -230,6 +256,8 @@
 			children = (
 				8AD724CF1D7FEDFF00C3D428 /* UIBarButtonItem+Category.swift */,
 				8AD724D11D7FF2C900C3D428 /* TitleButton.swift */,
+				8A06C2651D855735009D9DC2 /* UILabel+Category.swift */,
+				8A06C2671D855744009D9DC2 /* UIButton+Category.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -248,6 +276,16 @@
 				8AD724DC1D810D4A00C3D428 /* QRCode */,
 				8AD724D31D8002E900C3D428 /* Popover */,
 				8AD724BC1D7EAF8900C3D428 /* HomeTableViewController.swift */,
+				8A33FD701D87BAE3005DFA49 /* HomeRefreshView.xib */,
+				8A33FD721D87BD82005DFA49 /* HomeRefreshViewControl.swift */,
+				8A06C2631D8550E4009D9DC2 /* StatusTableViewCell.swift */,
+				8A33FD6C1D867FFB005DFA49 /* StatusForwardTableViewCell.swift */,
+				8A33FD6E1D869365005DFA49 /* StatusNormalTableViewCell.swift */,
+				8A33FD661D866E05005DFA49 /* StatusTableFooterView.swift */,
+				8A33FD681D866E8D005DFA49 /* StatusTableTopView.swift */,
+				8A33FD6A1D8671F0005DFA49 /* StatusPictureView.swift */,
+				8A06C25D1D853161009D9DC2 /* Status.swift */,
+				8A06C25F1D854899009D9DC2 /* User.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -285,6 +323,7 @@
 				8AD724CD1D7EE84C00C3D428 /* UIView+AutoLayout.swift */,
 				8A06C2501D835D6C009D9DC2 /* NetworkTools.swift */,
 				8A06C2541D83C98D009D9DC2 /* String+Category.swift */,
+				8A33FD621D85FAB7005DFA49 /* NSDate+Category.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -469,6 +508,7 @@
 			files = (
 				8AD724D81D8002E900C3D428 /* PopoverViewController.storyboard in Resources */,
 				8AD724C71D7EBD2300C3D428 /* MainVCSettings.json in Resources */,
+				8A33FD711D87BAE3005DFA49 /* HomeRefreshView.xib in Resources */,
 				8AD7248C1D7EA51E00C3D428 /* Assets.xcassets in Resources */,
 				8AD724DE1D810D5C00C3D428 /* QRCodeViewController.storyboard in Resources */,
 			);
@@ -618,23 +658,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A33FD671D866E05005DFA49 /* StatusTableFooterView.swift in Sources */,
 				8AD724D71D8002E900C3D428 /* PopoverPresentationController.swift in Sources */,
 				8AD724C31D7EAFFC00C3D428 /* ProfileTableViewController.swift in Sources */,
 				8AD724E01D810E7C00C3D428 /* QRCodeViewController.swift in Sources */,
+				8A33FD6F1D869365005DFA49 /* StatusNormalTableViewCell.swift in Sources */,
+				8A33FD731D87BD83005DFA49 /* HomeRefreshViewControl.swift in Sources */,
+				8A06C2601D854899009D9DC2 /* User.swift in Sources */,
 				8AD724D91D8002E900C3D428 /* PopoverViewController.swift in Sources */,
 				8A06C2531D83B299009D9DC2 /* UserAccount.swift in Sources */,
 				8A06C25A1D8405C1009D9DC2 /* WelcomeViewController.swift in Sources */,
 				8AD724BD1D7EAF8900C3D428 /* HomeTableViewController.swift in Sources */,
+				8A33FD631D85FAB7005DFA49 /* NSDate+Category.swift in Sources */,
 				8A06C2511D835D6C009D9DC2 /* NetworkTools.swift in Sources */,
+				8A06C2641D8550E4009D9DC2 /* StatusTableViewCell.swift in Sources */,
+				8A33FD691D866E8D005DFA49 /* StatusTableTopView.swift in Sources */,
+				8A33FD6B1D8671F0005DFA49 /* StatusPictureView.swift in Sources */,
 				8AD724CA1D7EDD0200C3D428 /* BaseTableViewController.swift in Sources */,
 				8AD724E21D814D2800C3D428 /* QRCodeCardViewController.swift in Sources */,
+				8A33FD6D1D867FFB005DFA49 /* StatusForwardTableViewCell.swift in Sources */,
 				8AD724BB1D7EAF6A00C3D428 /* MainViewController.swift in Sources */,
+				8A06C2661D855735009D9DC2 /* UILabel+Category.swift in Sources */,
+				8A06C25E1D853161009D9DC2 /* Status.swift in Sources */,
 				8AD724BF1D7EAFBE00C3D428 /* DiscoverTableViewController.swift in Sources */,
 				8AD724D01D7FEDFF00C3D428 /* UIBarButtonItem+Category.swift in Sources */,
 				8A06C24F1D834F1D009D9DC2 /* OAuthViewController.swift in Sources */,
 				8AD724CE1D7EE84C00C3D428 /* UIView+AutoLayout.swift in Sources */,
 				8A06C2581D83ECF7009D9DC2 /* NewfeatureCollectionViewController.swift in Sources */,
 				8AD724C11D7EAFE200C3D428 /* MessageTableViewController.swift in Sources */,
+				8A06C2681D855744009D9DC2 /* UIButton+Category.swift in Sources */,
 				8AD724DB1D80FF9F00C3D428 /* PopoverAnimator.swift in Sources */,
 				8AD724CC1D7EE1F500C3D428 /* VisitorView.swift in Sources */,
 				8AD724851D7EA51E00C3D428 /* AppDelegate.swift in Sources */,

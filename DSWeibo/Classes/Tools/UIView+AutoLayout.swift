@@ -1,8 +1,8 @@
 //
 //  UIView+AutoLayout.swift
-//  XMGWeibo
+//  DSWeibo
 //
-//  Created by 李南江 on 15/9/1.
+//  Created by Yue on 15/9/1.
 //  Copyright © 2015年 xiaomage. All rights reserved.
 //
 
