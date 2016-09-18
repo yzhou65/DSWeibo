@@ -45,17 +45,25 @@ class Status: NSObject {
         didSet {
             //初始化数组
             storedPicURLS = [NSURL]()
+            storedLargePicURLS = [NSURL]()
+            
             //遍历取出所有的图片路径字符串
             for dict in pic_urls! {
-                if let urlStr = dict["thumbnail_pic"] {
+                if let urlStr = dict["thumbnail_pic"] as? String {
                     //将字符串专为URL保存到数组
-                    storedPicURLS?.append(NSURL(string: urlStr as! String)!)
+                    storedPicURLS?.append(NSURL(string: urlStr)!)
+                    
+                    //处理大图
+                    let largeURLStr = urlStr.stringByReplacingOccurrencesOfString("thumbnail", withString: "large")
+                    storedLargePicURLS?.append(NSURL(string: largeURLStr)!)
                 }
             }
         }
     }
     /// 保存当前微博所有配图的URL
     var storedPicURLS: [NSURL]?
+    /// 保存当前微博所有配图大图的URL
+    var storedLargePicURLS: [NSURL]?
     /// 用户信息
     var user: User?
     /// 转发微博
@@ -66,15 +74,24 @@ class Status: NSObject {
     var pictureURLS: [NSURL]? {
         return retweeted_status != nil ? retweeted_status?.storedPicURLS : storedPicURLS
     }
+    /// 定义一个计算属性，用于返回原创或者转发配图的大图URL数组
+    var largePicURLS: [NSURL]? {
+        return retweeted_status != nil ? retweeted_status?.storedLargePicURLS : storedLargePicURLS
+    }
     
     /// 加载微博数据
-    class func loadStatuses(since_id: Int, completed: (models:[Status]?, error:NSError?)->()){
+    class func loadStatuses(since_id: Int, max_id: Int, completed: (models:[Status]?, error:NSError?)->()){
         let path = "2/statuses/home_timeline.json"
         var params = ["access_token": UserAccount.loadAccount()!.access_token!]
         
         //下拉刷新
         if since_id > 0 {
             params["since_id"] = "\(since_id)"
+        }
+        
+        //上拉刷新
+        if max_id > 0 {
+            params["max_id"] = "\(max_id - 1)"
         }
         
         NetworkTools.sharedNetworkTools().GET(path, parameters: params, success: { (_, JSON) -> Void in
@@ -118,7 +135,7 @@ class Status: NSObject {
             }
             
             for url in status.pictureURLS! {
-                //将党啊钱的下载操作添加到组
+                //将当前的下载操作添加到组
                 dispatch_group_enter(group)
                 
                 //开启子线程，缓存图片

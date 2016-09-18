@@ -45,7 +45,9 @@ class MainViewController: UITabBarController {
      注意：此方法不能是private，否则会崩溃。因为这个方法不是在当前类中触发的，而是runtime中CFRunLoop监听且以消息机制传递的，所以不能设置为private
      */
     func composeBtnClick(){
-        print(#function)
+        let composeVC = ComposeViewController()
+        let nav = UINavigationController(rootViewController: composeVC)
+        presentViewController(nav, animated: true, completion: nil)
     }
     
     //MARK: 内部控制方法

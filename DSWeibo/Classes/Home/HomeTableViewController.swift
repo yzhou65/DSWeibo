@@ -35,14 +35,12 @@ class HomeTableViewController: BaseTableViewController {
         //注册通知，监听菜单的弹出与关闭
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(change), name: YZPopoverAnimatorWillShow, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(change), name: YZPopoverAnimatorWillDismiss, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(showPhotoBrowser), name: YZStatusPictureViewSelected, object: nil)
         
         //注册2个cell
         tableView.registerClass(StatusNormalTableViewCell.self, forCellReuseIdentifier: StatusTableViewCellIdentifier.NormalCell.rawValue)
         tableView.registerClass(StatusForwardTableViewCell.self, forCellReuseIdentifier: StatusTableViewCellIdentifier.ForwardCell.rawValue)
         
-//        tableView.estimatedRowHeight = 200
-//        tableView.rowHeight = UITableViewAutomaticDimension
-//        tableView.rowHeight = 300
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
         //添加自定义的下拉刷新控件
@@ -62,11 +60,37 @@ class HomeTableViewController: BaseTableViewController {
         loadBlogData()
     }
     
+    /**
+     显示图片浏览器
+     */
+    func showPhotoBrowser(note: NSNotification) {
+//        print(note.userInfo)
+        //注意：通过通知传递数据，一定要判断数据是否存在
+        guard let indexPath = note.userInfo![YZStatusPictureViewIndexKey] as? NSIndexPath else {
+            print("No indexPath")
+            return
+        }
+        
+        guard let urls = note.userInfo![YZStatusPictureViewURLsKey] as? [NSURL] else {
+            print("No pictures")
+            return
+        }
+        
+        //创建图片浏览器
+        let vc = PhotoBrowserController(index: indexPath.item, urls: urls)
+        
+        //modal图片浏览器
+        presentViewController(vc, animated: true, completion: nil)
+    }
+    
     deinit {
         //移除通知
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
+    
+    /// 定义变量记录当前是上拉还是下拉
+    var pullupRefreshFlag = false
     /**
      获取微博数据
      如果想调用一个私有方法：
@@ -84,8 +108,17 @@ class HomeTableViewController: BaseTableViewController {
          每条微博都有一个微博ID，而且微博ID越后面发送的微博，其微博ID越大，递增
          新浪返回给我们的微博数据，是从大到小的返回的
         */
-        let since_id = statuses?.first?.id ?? 0
-        Status.loadStatuses(since_id) { (models, error) in
+        /// 默认当做下拉处理
+        var since_id = statuses?.first?.id ?? 0
+        var max_id = 0
+        
+        // 判断是否是上拉
+        if pullupRefreshFlag {
+            since_id = 0
+            max_id = statuses?.last?.id ?? 0
+        }
+        
+        Status.loadStatuses(since_id, max_id: max_id) { (models, error) in
             //结束刷新动画
             self.refreshControl?.endRefreshing()
             
@@ -95,12 +128,16 @@ class HomeTableViewController: BaseTableViewController {
             
             // 下拉刷新
             if since_id > 0 {
-                //如果是下拉刷新，就将获取到的数据，拼接再原有数据前面
+                //如果是下拉刷新，就将获取到的数据，拼接再原有数据前面. Swift中可直接用＋来合并两个类型相同的数组
                 self.statuses = models! + self.statuses!
                 
                 // 显示刷新提醒
                 self.showNewStatusCount(models?.count ?? 0)
-            } else {
+            } else if max_id > 0 {
+                //如果是上拉加载更多，就将获取到的数据，拼接在原有数据的后面
+                self.statuses = self.statuses! + models!
+            }
+            else {
                 self.statuses = models
             }
         }
@@ -110,7 +147,7 @@ class HomeTableViewController: BaseTableViewController {
      此方法会被两次调用
      */
     private func showNewStatusCount(count: Int) {
-        newStatusLabel.hidden = false
+        newStatusLabel.alpha = 1.0
         newStatusLabel.text = (count == 0) ? "没有刷新到新微博数据" : "刷新到\(count)条微博数据"
         
         //动画，记录提醒控件的fram
@@ -231,17 +268,17 @@ class HomeTableViewController: BaseTableViewController {
         let height: CGFloat = 44
         label.frame = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: 44)
         
-        label.backgroundColor = UIColor.orangeColor()
+        label.backgroundColor = UIColor.redColor()
         label.textAlignment = NSTextAlignment.Center
         label.textColor = UIColor.whiteColor()
         label.font = UIFont.systemFontOfSize(14)
+        label.alpha = 0.0
         
         //添加label到界面上
 //        self.tableView.addSubview(label)
         
         self.navigationController?.navigationBar.insertSubview(label, atIndex: 0)
         
-        label.hidden = true
         
         //添加label到界面
         return label
@@ -271,6 +308,15 @@ extension HomeTableViewController {
         
         //设置cell的数据
         cell.status = status
+        
+        //判断是否滚动到了最后一行
+        let count = statuses?.count ?? 0
+        if indexPath.row == (count - 1) {
+            pullupRefreshFlag = true
+            loadBlogData()  //获取更多微博数据
+        }
+        
+        
         return cell
     }
     

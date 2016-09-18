@@ -28,6 +28,7 @@ class StatusPictureView: UICollectionView {
         
         //设置数据源
         dataSource = self
+        delegate = self
         
         //设置cell之间的间隙
         pictureLayout.minimumInteritemSpacing = 10
@@ -88,7 +89,13 @@ class StatusPictureView: UICollectionView {
         //定义属性接收外界传入的数据
         var imageURL: NSURL? {
             didSet{
+                //设置图片
                 iconImageView.sd_setImageWithURL(imageURL!)
+                
+                //判断是否需要显示gif图标
+                if (imageURL!.absoluteString as NSString).pathExtension == "gif" {
+                    gifImageView.hidden = false
+                }
             }
         }
         
@@ -102,12 +109,20 @@ class StatusPictureView: UICollectionView {
         private func setupUI() {
             //添加子控件
             contentView.addSubview(iconImageView)
+            iconImageView.addSubview(gifImageView)
+            
             //布局子控件
             iconImageView.xmg_Fill(contentView)
+            gifImageView.xmg_AlignInner(type: XMG_AlignType.BottomRight, referView: iconImageView, size: nil)
         }
         
         //MARK: - 懒加载
         private lazy var iconImageView:UIImageView = UIImageView()
+        private lazy var gifImageView: UIImageView = {
+            let iv = UIImageView(image: UIImage(named:"avatar_vgirl"))
+            iv.hidden = true
+            return iv
+        }()
         
         required init?(coder aDecoder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
@@ -115,7 +130,15 @@ class StatusPictureView: UICollectionView {
     }
 }
 
-extension StatusPictureView: UICollectionViewDataSource {
+/// 选中图片的通知名称
+let YZStatusPictureViewSelected = "YZStatusPictureViewSelected"
+/// 当前选中图片的索引对应的key
+let YZStatusPictureViewIndexKey = "YZStatusPictureViewIndexKey"
+/// 需要展示的所有图片对应的key
+let YZStatusPictureViewURLsKey = "YZStatusPictureViewURLsKey"
+extension StatusPictureView: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    //MARK: - UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return status?.storedPicURLS?.count ?? 0
     }
@@ -129,7 +152,14 @@ extension StatusPictureView: UICollectionViewDataSource {
         
         return cell
     }
-
+    
+    //MARK: - UICollectionViewDelegate
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+//        print("查看大图")
+        
+        let info = [YZStatusPictureViewIndexKey: indexPath, YZStatusPictureViewURLsKey: status!.storedLargePicURLS!]
+        NSNotificationCenter.defaultCenter().postNotificationName(YZStatusPictureViewSelected, object: self, userInfo: info)
+    }
 }
 
 
